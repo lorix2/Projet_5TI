@@ -1,0 +1,13 @@
+{% extends "log.html" %}
+
+{% block title %}Eleve{% endblock %}
+
+{% block content %}
+
+
+    <h1>Eleve</h1>
+
+    <p>Tu es en {% for c in clas %}
+            {{ c }}
+    {% endfor %}</p>
+{% endblock %}

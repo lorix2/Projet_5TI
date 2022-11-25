@@ -1,0 +1,32 @@
+{% extends "log.html" %}
+
+{% block title %}prof{% endblock %}
+
+{% block content %}
+
+
+    <h1>Prof</h1>
+    <p>ALL eleve</p>
+    <form class="form" action="" method="post">{% csrf_token %}
+        {% for u in user %}
+            <li><lu>{{ u.first_name }} {{ u.last_name }} <input type="submit" id="c_select" name="c_select" value="{{ u }}"></lu></li>
+        {% endfor %}
+
+        <select name="se">
+            {% for grp in classe %}
+                <option value="{{ grp.name }}" >{{ grp.name }}</option>
+            {% endfor %}
+        </select>
+
+    </form>
+
+    <form class="form" action="" method="post">{% csrf_token %}
+        <p> Name classe :</p>
+        <input class="form-row" id="c" type="text" name="c">
+
+        <a href=""><input class="button" type="submit" value="add classe"></a>
+    </form>
+
+
+
+{% endblock %}
