@@ -1,21 +1,21 @@
 from random import randint
 
-from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 
-from django.http import Http404, HttpResponseRedirect, HttpResponse
+from django.http import Http404
 from django.shortcuts import render, redirect
-from django.template import loader
-from django.urls import reverse
+
 from django.contrib import messages
 from log.models import Person
 from .forms import NameForm, class_form, add_classe_to_user
 
-
+#view home avec tp
 def home(request):
     return render(request,'tp.html')
 
+#view creation de compte eleve
 def sing(request):
     try:
         form = NameForm(request.POST)
@@ -30,12 +30,11 @@ def sing(request):
             user = User.objects.create_user(username=user, first_name=fname, last_name=sname, password=mdp)
             g.user_set.add(user)
 
-
-
-
     except Person.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, 'singup.html')
+
+#view creation de compte prof
 def sing_prof(request):
     try:
         form = NameForm(request.POST)
@@ -54,21 +53,19 @@ def sing_prof(request):
 
                 login(request, user)
 
-
-
     except Person.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, 'prof-singup.html')
 
 
-
+#view une fois connecte
 def log(request, username):
 
     return render(request, 'log.html')
+
+#view de login
 def loginn(request):
     try:
-
-
 
         if request.method == "POST":
 
@@ -77,7 +74,6 @@ def loginn(request):
 
 
             user = authenticate(request, username=username, password=password)
-
 
             if user is not None and user.is_active:
                 name = request.user.username
@@ -95,27 +91,18 @@ def loginn(request):
             else:
                 print('error')
 
-
-
-
-
-
-
     except Person.DoesNotExist:
         raise Http404("Question does not exist")
 
     return render(request, 'login.html')
+
+#view de prof pour la gestion des classes
 def prof(request, username):
-
-
 
     users = User.objects.filter(groups__name='eleve')
 
-
-
-
     form = class_form(request.POST)
-    form_ = add_classe_to_user(request.POST)
+    form_ = add_classe_to_user(request.POST)# ajout de classe
 
 
     if form.is_valid():
@@ -124,7 +111,7 @@ def prof(request, username):
         classe = form.data.get("c")
 
         Group.objects.create(name=classe)
-
+    #selection des utilisatuer et attribution des classe au eleve
     if form_.is_valid():
         c_select = form_.data.get("c_select")
         answer = form_.data.get("se")
@@ -135,13 +122,6 @@ def prof(request, username):
         g = Group.objects.get(name=answer)
 
         g.user_set.add(user_s)
-
-
-
-
-
-
-
 
     grp_classe = Group.objects.all()
     len_of_grp = len(grp_classe)-2
@@ -154,13 +134,8 @@ def prof(request, username):
         user = users.filter(groups__name=c.name)
         u = user.values()
 
-
-
-
-
-
-
     return render(request,'log_prof.html', {"user": users, "classe": grp_classe[0:len_of_grp], "classes_user": User.objects.filter(groups__name="1D")})
+
 def eleve(request, username):
 
     user_cl = request.user.groups.all()

@@ -14,30 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User, Group
-from django.http import Http404, HttpResponseRedirect, request
-from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.urls import path
 
-from log.models import Person
-from .forms import NameForm
 from MYapp import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('sinup/eleve', views.sing),
-    path('sinup/prof', views.sing_prof),
-    path('login/', views.loginn),
-    path('log', views.log, name='log'),
-    path('eleve/<str:username>', views.eleve, name='log'),
-    path('prof/<str:username>', views.prof, name='log'),
-    path('logout', views.deco, name="logout"),
-    path('home', views.home, name='home'),
-    path('', views.redirect_home, name='redirect_home')
+    path('admin/', admin.site.urls), #url interface admin
+    path('signup/eleve', views.sing), #url sign up eleve
+    path('sinup/prof', views.sing_prof), # url sign up prof
+    path('login/', views.loginn), #url login
+    path('log', views.log, name='log'), # url une fois connecté
+    path('eleve/<str:username>', views.eleve, name='log'), # url une fois connecté eleve
+    path('prof/<str:username>', views.prof, name='log'), # url une fois connecté prof
+    path('logout', views.deco, name="logout"), #url de log out
+    path('home', views.home, name='home'), #url home
+    path('', views.redirect_home, name='redirect_home'), #url redirect vers home
 
 
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)# ajout des fichier static pour les templates
