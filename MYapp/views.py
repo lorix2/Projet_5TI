@@ -9,7 +9,8 @@ from django.shortcuts import render, redirect
 
 from django.contrib import messages
 from log.models import Person
-from .forms import NameForm, class_form, add_classe_to_user
+from .forms import NameForm, class_form, add_classe_to_user, sub
+
 
 #view home avec tp
 def home(request):
@@ -116,7 +117,7 @@ def prof(request, username):
         c_select = form_.data.get("c_select")
         answer = form_.data.get("se")
         user_s = User.objects.get(username=c_select).id
-
+        print(c_select)
 
 
         g = Group.objects.get(name=answer)
@@ -150,3 +151,19 @@ def deco(request):
 
 def redirect_home(request):
     return redirect("/home")
+
+def t(request):
+    form = sub(request.POST)
+
+    mess = form.data.get("subin")
+    print(mess)
+
+    return render(request,'tp2.html')
+
+def Unread(request):
+
+  count=request.body['count']
+
+  print("hello")
+
+  print("count status ",count)

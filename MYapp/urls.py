@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls), #url interface admin
-    path('signup/eleve', views.sing), #url sign up eleve
+    path('sinup/eleve', views.sing), #url sign up eleve
     path('sinup/prof', views.sing_prof), # url sign up prof
     path('login/', views.loginn), #url login
     path('log', views.log, name='log'), # url une fois connecté
@@ -31,6 +31,7 @@ urlpatterns = [
     path('logout', views.deco, name="logout"), #url de log out
     path('home', views.home, name='home'), #url home
     path('', views.redirect_home, name='redirect_home'), #url redirect vers home
+    path('tp', views.t, name='tp'), #url home
+    path('notification',views.Unread,name='Unread')
 
-
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)# ajout des fichier static pour les templates
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)# ajout des fichier static pour les templates
