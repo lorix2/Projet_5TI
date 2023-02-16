@@ -1,3 +1,11 @@
+
+{% extends "index.html" %}
+
+
+
+{% block content %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="style.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
@@ -13,12 +21,10 @@
 <style>
     body{
 
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+
     overflow: hidden;
 
-    width: 1440px;
+
     height: 1024px;
 
     background: linear-gradient(126.97deg, #D98B8B 0%, #042326 86.95%);
@@ -76,10 +82,10 @@
     position: absolute;
     width: 400px;
     height: 500px;
-    top: 50%;
+
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 320px;
+    top: 420px;
     display: flex;
     background: rgba(217, 217, 217, 0.38);
     box-shadow: 4px 22px 17px -1px rgba(0, 0, 0, 0.08);
@@ -87,58 +93,7 @@
     flex-direction: column;
 
 }
-.header{
-    background-color: #00000026;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
-    position: fixed;
-    top: 0;
-    margin-left: -10px;
-}
-.text-header{
-    margin-top: 5px;
-    margin-left: 10px;
-    font-size: 1.8rem;
-    text-decoration: none;
-
-    color: black;
-    text-align: center;
-    text-transform:capitalize;
-
-
-}
-.menu-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    right: 10px;
-
-}
-.menu-header-button{
-
-    width: 100px;
-    height: 40px;
-    margin-top: 5px;
-
-
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    text-transform:capitalize;
-
-    font-size: 1.8rem;
-
-
-
-}
-.menu-header-button:hover{
-    opacity: 0.6;
-}
 .text-login{
     position: absolute;
     font-size: 2rem;
@@ -154,18 +109,8 @@ form{
     top: 100px;
     left: 50px;
     
-
-
-
-
-
-
-
-
-
-
 }
-.button{
+.button-log{
     position: absolute;
     width: 300px;
     height: 45px;
@@ -186,17 +131,7 @@ form{
 </style>
 <body>
     <body>
-        <header class="header">
-            <a class="text-header" href="{% url 'home' %}">Home</a>
 
-            <nav class="menu-header">
-                <a href="/sinup/eleve" class="menu-header-button" role="button">élève</a>
-                <a href="/sinup/prof" class="menu-header-button" role="button">prof</a>
-
-            </nav>
-
-
-        </header>
 
 
         <div class="box">
@@ -211,7 +146,7 @@ form{
                     <label class="mdp" for="mdp"><b>mdp</b></label><br>
                     <input class="input-mdp" type="password" placeholder="Enter Password" id="mdp" type="text" name="mdp" required>
 
-                    <button class="button" type="submit">Login</button>
+                    <button class="button-log" type="submit">Login</button>
                 </div>
 
             </form>
@@ -220,3 +155,4 @@ form{
     </body>
 </body>
 </html>
+{% endblock %}

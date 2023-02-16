@@ -9,140 +9,138 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <style>
-    .top{
-        margin-bottom: 10px;
-        margin-top: 200px;
+
+    body{
+        background-repeat: no-repeat;
+        overflow: hidden;
+
+
+        height: 1024px;
+
+        background: linear-gradient(126.97deg, #D98B8B 0%, #042326 86.95%);
     }
-    .header{
-        background-color: rgb(223, 223, 223);
-        width: 100%;
-        height: 50px;
+
+
+
+
+    
+    .navbar{
+            list-style-type: none;
+            width: 99%;
+            position:fixed;
+            height: 70px;
+            margin-top: 5px;
+
+            background-color: #f4f7fd;
+
+            border-radius: 5px 5px 10px 10px ;
+            box-shadow: rgb(89, 89, 89) 5px 5px 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+
+
+
+
+    }
+    nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-left: 100px;
+            margin-right: 100px;
+
+
+
+
+
+
+    }
+    img{
+    margin-left: 20px;
+
+    }
+    .button{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-family: 'Open Sans', sans-serif;
-        position: fixed;
-        top: 0;
+
     }
-    .text-header{
-        margin-top: auto;
+
+
+
+
+
+    .button-28 {
+        height: 45px;
+        appearance: none;
+        background-color: transparent;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+
+        box-shadow: 1px 2px 4px rgb(219, 219, 219);
+        box-sizing: border-box;
+        color: #3B3B3B;
+        cursor: pointer;
         margin-left: 10px;
-        font-size: 1.8rem;
+        padding: 12px 24px;
 
-    }
-    .menu-header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-family: 'Open Sans', sans-serif;
-
-
-    }
-    .menu-header-button{
-
-        width: 100px;
-        height: 40px;
-        margin-top: 5px;
-        display: flex;
-        justify-content: space-around;
-
+        line-height: normal;
+        margin-top: 10px;
         text-decoration: none;
         color: black;
+
+        outline: none;
+
         text-align: center;
-        text-transform:capitalize;
-
-        font-size: 1.8rem;
-        appearance: button;
-
-
-    }
-    .menu-header-button:hover{
-        opacity: 0.6;
-    }
-
-
-
-    .button-34 {
-        background: #5E5DF0;
-        border-radius: 999px;
-        box-shadow: #000000 0 10px 20px -10px;
-        box-sizing: border-box;
-        color: #FFFFFF;
-        cursor: pointer;
-        text-transform:capitalize;
-
-        font-size: 1.5rem;
-        margin-top: 10px;
-
-        line-height: 23px;
-        opacity: 1;
-        outline: 0 solid transparent;
-        padding: 10px 20px;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
-        width: fit-content;
-
-        border: 0;
+        width: 100px;
+        will-change: transform;
     }
-    .nav{
-        background: rgb(48,138,255);
-        box-shadow: #000000 0 10px 20px ;
-        width: 100%;
-        height: 3px;
-        position: absolute;
-        margin-top: 50px;
+
+    .button-28:disabled {
+        pointer-events: none;
     }
-    @media only screen and (min-width: 600px) {
 
-        .menu-header{
-            margin-right: 80px;
-
-        }
-        .menu-header-button{
-            font-size: 2rem;
-
-        }
-        .text-header{
-            font-size: 2rem;
-
-        }
-        .button-34 {
-            padding: 7px 40px;
-        }
-
-
+    .button-28:hover {
+          color: #fff;
+          background-color: #1A1A1A;
+          box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+          transform: translateY(-2px);
     }
-    footer{
-        margin-top: 2000px;
 
+    .button-28:active {
+          box-shadow: none;
+          transform: translateY(0);
     }
-    section{
-        margin-top: 2000px;
+    a{
+        text-decoration: none;
+        color: black;
     }
 
 
 
 </style>
-
+{% load static %}
 <body>
     
 
 
 
 
-    <header class="header">
-        <h1 class="text-header">HOME</h1>
-        <div class="nav"></div>
-        <nav class="menu-header">
-            <a href="/sinup/eleve" class="menu-header-button" role="button">élève</a>
-            <a href="/sinup/prof" class="menu-header-button" role="button">prof</a>
-            <a href="/login/" class="menu-header-button button-34" role="button">login</a>
-            
-        </nav>
 
+    <nav>
+        <div class ="navbar">
+            <img src="{% static 'WebAtom crop.png' %}" alt="">
+            <li class="button">
+                <a href="{% url 'login' %}"><ul class="button-28">login</ul></a>
+                <a href="{% url 'sp' %}"><ul class="button-28">sign up</ul></a>
+            </li>
+        </div>
+    </nav>
 
-    </header>
 
     {% block content %}
 
