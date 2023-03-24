@@ -9,12 +9,14 @@ from django.shortcuts import render, redirect
 
 from django.contrib import messages
 from log.models import Person
-from .forms import NameForm, class_form, add_classe_to_user, sub
+from .forms import NameForm, class_form, add_classe_to_user, sub, add_exe
 
 
 #view home avec tp
 def home(request):
+
     return render(request,'index.html')
+
 def sign_page(request):
     return render(request,'sign_page.html')
 
@@ -106,6 +108,7 @@ def prof(request, username):
 
     form = class_form(request.POST)
     form_ = add_classe_to_user(request.POST)# ajout de classe
+    form2 = add_exe(request.POST)
 
 
     if form.is_valid():
@@ -114,6 +117,7 @@ def prof(request, username):
         classe = form.data.get("c")
 
         Group.objects.create(name=classe)
+
     #selection des utilisatuer et attribution des classe au eleve
     if form_.is_valid():
         c_select = form_.data.get("c_select")
@@ -125,6 +129,12 @@ def prof(request, username):
         g = Group.objects.get(name=answer)
 
         g.user_set.add(user_s)
+    if form2.is_valid():
+        tst = form2.data.get("exe_t")
+        tt = form2.data.get("class_select")
+        Person.objects.create(first_name=tst, last_name=tt)
+        print(tst)
+        print(tt)
 
     grp_classe = Group.objects.all()
     len_of_grp = len(grp_classe)-2
@@ -137,14 +147,24 @@ def prof(request, username):
         user = users.filter(groups__name=c.name)
         u = user.values()
 
-    return render(request,'log_prof.html', {"user": users, "classe": grp_classe[0:len_of_grp], "classes_user": User.objects.filter(groups__name="1D")})
+    return render(request,'log_prof.html', {"user": users, "classe": grp_classe[0:len_of_grp], "classes_user": User.objects.filter(groups__name="1D"), "e" : Person.objects.all()})
 
 def eleve(request, username):
 
     user_cl = request.user.groups.all()
     len_of_grp = len(user_cl)
     classe_user = user_cl[1:len_of_grp]
-    return render(request,'log_eleve.html', {"clas": classe_user})
+    all_ex = Person.objects.all()
+    exee = []
+    for ex in all_ex:
+        if ex.last_name == classe_user[0]:
+            exee.append(ex.first_name)
+    print(exee)
+    form = sub(request.POST)
+
+    mess = form.data.get("subin")
+    print(mess)
+    return render(request,'log_eleve.html', {"clas": classe_user, "exe": all_ex, "classs" : str(classe_user[0])})
 
 @login_required
 def deco(request):
@@ -155,10 +175,7 @@ def redirect_home(request):
     return redirect("/home")
 
 def t(request):
-    form = sub(request.POST)
 
-    mess = form.data.get("subin")
-    print(mess)
 
     return render(request,'tp2.html')
 

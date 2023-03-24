@@ -27,6 +27,21 @@
         <a href=""><input class="button" type="submit" value="add classe"></a>
     </form>
 
+    <form class="form" action="" method="post">{% csrf_token %}
+        <p> exe :</p>
+        <input class="form-row" id="exe_t" type="text" name="exe_t">
+
+        <a href=""><input class="button" type="submit" value="add exe"></a>
+        <select name="class_select">
+            {% for grp in classe %}
+                <option value="{{ grp.name }}" >{{ grp.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+    {% for u in e %}
+            <li><lu>{{ u.first_name }} {{ u.last_name }}</lu></li>
+    {% endfor %}
+
 
 
 {% endblock %}

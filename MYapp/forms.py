@@ -28,5 +28,9 @@ class class_form(forms.Form):
 
 class add_classe_to_user(forms.Form):
     c_select = forms.CharField(max_length=100)
+
+class add_exe(forms.Form):
+        exe_t = forms.CharField(max_length=100)
+        class_select = forms.CharField(max_length=100)
 class sub(forms.Form):
     sub = forms.CharField(max_length=100)

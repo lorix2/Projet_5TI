@@ -8,6 +8,19 @@
     <h1>Eleve</h1>
 
     <p>Tu es en {% for c in clas %}
-            {{ c }}
-    {% endfor %}</p>
+                {{ c }}
+
+        <p>
+        {% for e in exe %}
+            {% if e.last_name == classs %}
+                <form class="form" action="" method="post">{% csrf_token %}
+                    <h1 v-bind:name="`${{ id }}`">{{ e.idd }} {{ e.first_name }} = </h1><input type="text" name="subin"><button type="submit">enter</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+        </p>
+    {% endfor %}
+    </p>
+
+    <a href="{% url 'tp' %}"><ul class="button-28">tp</ul></a>
 {% endblock %}
