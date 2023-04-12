@@ -15,7 +15,7 @@ from .forms import NameForm, class_form, add_classe_to_user, sub, add_exe
 #view home avec tp
 def home(request):
 
-    return render(request,'index.html')
+    return render(request,'home.html')
 
 def sign_page(request):
     return render(request,'sign_page.html')

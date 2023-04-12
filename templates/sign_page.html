@@ -10,16 +10,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
 <style>
     body{
         background-repeat: no-repeat;
         overflow: hidden;
+         font-family: 'PT Sans', sans-serif;
+
 
 
         height: 1024px;
 
-        background: linear-gradient(126.97deg, #D98B8B 0%, #042326 86.95%);
+
     }
     .box{
         margin-left: 50%;
@@ -53,11 +58,14 @@
         text-align: center;
 
     }
-    @media only screen and (max-width: 1400px) {
+    @media only screen and (max-height: 700px) {
         .box{
-            /*scale: 80%;
-            margin-top: 1000px;
-            margin-left: 50%;*/
+            scale: 80%;
+            margin-left: 50%;
+            transform: translate(-100%, 10%);
+
+
+
 
 
         }

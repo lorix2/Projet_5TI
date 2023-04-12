@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>test</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
 <style>
 
     body{
-        background-repeat: no-repeat;
-        overflow: hidden;
 
+
+         font-family: 'PT Sans', sans-serif;
 
         height: 1024px;
-
-        background: linear-gradient(126.97deg, #D98B8B 0%, #042326 86.95%);
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        /*background: linear-gradient(180.97deg, #000000 30%, #ffffff 99.95%);*/
     }
 
 
@@ -29,12 +29,15 @@
             width: 99%;
             position:fixed;
             height: 70px;
-            margin-top: 5px;
+            margin-top: -10px;
+
 
             background-color: #f4f7fd;
 
             border-radius: 5px 5px 10px 10px ;
-            box-shadow: rgb(89, 89, 89) 5px 5px 15px;
+            -webkit-box-shadow: 11px 6px 40px 4px rgba(0,0,0,0.73);
+            -moz-box-shadow: 11px 6px 40px 4px rgba(0,0,0,0.73);
+            box-shadow: 11px 6px 40px 4px rgba(0,0,0,0.73);
             display: flex;
             flex-direction: row;
             justify-content: left;
@@ -136,7 +139,7 @@
             <img src="{% static 'WebAtom crop.png' %}" alt="">
             <li class="button">
                 <a href="{% url 'login' %}"><ul class="button-28">login</ul></a>
-                <a href="{% url 'sp' %}"><ul class="button-28">sign up</ul></a>
+                <a href="{% url 'sp' %}"><ul class="button-28">signup</ul></a>
             </li>
         </div>
     </nav>
