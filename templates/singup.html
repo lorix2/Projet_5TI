@@ -1,3 +1,5 @@
+{% extends "index.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,222 +12,131 @@
 </head>
 <style>
     body{
-        background-color: rgb(219, 219, 219);
-    }
-    
-    .form{
-        margin-top: 100px;
-        margin-left:auto;
-        margin-right:auto;
-        text-align: center;
-        text-transform:capitalize;
-        box-shadow: #979797 5px 5px 500px ;
-        scale: 100%;
-        border: solid 4px #5E5DF0;
-        border-radius: 1.2rem;
-        background-color: rgba(255, 255, 255, 0.276);
-        
-       
-        
-       
-        
-        
-        width: 300px;
-        height: 500px;
+
+
+    overflow: hidden;
+
+
+    height: 1024px;
+
+
+    font-family: 'PT Sans', sans-serif;
+
+}
+
+.u{
 
 
 
-    }
-    label{
-        
-        margin-right: 100px;
-        font-family: 'Open Sans', sans-serif;
 
-    }
-    input{
 
-        
-        
-        padding: 12px 20px;
-       
-        margin-left:auto;
-        margin-right:auto;
-        
-        border: 1px solid #ccc;
-        
-        box-sizing: border-box;
-    }
-    p{
-        margin-left: -100px;
-    }
-    .button{
+    color: #000000;
+}
 
-        margin-top: 20px;
-        width: 170px;
-    }
-    .top{
-        margin-bottom: 10px;
-        margin-top: 200px;
-    }
-    .header{
-        background-color: rgb(223, 223, 223);
-        width: 100%;
-        height: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-family: 'Open Sans', sans-serif;
-        position: fixed;
-        top: 0;
-    }
-    .text-header{
-        margin-top: auto;
-        margin-left: 10px;
-        font-size: 1.8rem;
 
-    }
-    .menu-header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-family: 'Open Sans', sans-serif;
-        margin-right: 0px;
-        
-    }
-    .menu-header-button{
-        
-        width: 100px;
-        height: 40px;
-        margin-top: 5px;
-        display: flex;
-        justify-content: space-around;
-        
-        text-decoration: none;
-        color: black;
-        text-align: center;
-        text-transform:capitalize;
-        
-        font-size: 1.8rem;
-        appearance: button;
 
-        
-    }
-    .menu-header-button:hover{
-        opacity: 0.6;
-    }
-  
 
-    
-    .button-34 {
-        background: #5E5DF0;
-        border-radius: 999px;
-        box-shadow: #000000 0 10px 20px -10px;
-        box-sizing: border-box;
-        color: #FFFFFF;
-        cursor: pointer;
-        text-transform:capitalize;
-        
-        font-size: 1.5rem;
-        margin-top: 10px;
-        
-        line-height: 23px;
-        opacity: 1;
-        outline: 0 solid transparent;
-        padding: 10px 20px;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        width: fit-content;
-       
-        border: 0;
-    }
-    .nav{
-        background: rgb(48,138,255);
-        box-shadow: #000000 0 10px 20px ;
-        width: 100%;
-        height: 3px;
-        position: absolute;
-        margin-top: 50px;
-    }
-    @media only screen and (min-width: 600px) {
-        
-        .menu-header{
-            margin-right: 80px;
-            
-        }
-        .menu-header-button{
-            font-size: 2rem;
-            
-        }
-        .text-header{
-            font-size: 2rem;
+.form-row{
+    height: 30px;
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    left: 50%;
+    padding: 20px 10px;
+    font-size: 1.3rem;
+}
+
+input{
+
+    margin-top: 10px;
+
+}
+
+.box{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 400px;
+    display: flex;
+    background-color: #f4f7fd;
+    box-shadow: 4px 22px 17px -1px rgba(0, 0, 0, 0.08);
+    border-radius: 81px;
+    flex-direction: column;
+
+}
+
+
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 50px;
+
+}
+.button-log{
+
+    width: 300px;
+    height: 45px;
+    background-color: #393939;
+    color: white;
+
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    left: 50%;
+    font-size: 1.3rem;
+
+
+
+}
+
+@media only screen and (max-height: 700px) {
+        .box{
+            top: 350px;
+
+
+
+
 
         }
-        .button-34 {
-            padding: 7px 40px;
-        }
-            
-        
     }
-   
-    
 
-    
-    
-    
-
-    
-
-   
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin-top: 15px;
-        
-    }
-    
-
-
-    
 
 </style>
 <body>
-    <header class="header">
-        <h1 class="text-header">HOME</h1>
-        <div class="nav"></div>
-        <nav class="menu-header">
-            <a href="/sinup/eleve" class="menu-header-button" role="button">élève</a>
-            <a href="/sinup/prof" class="menu-header-button" role="button">prof</a>
-           
-            
-        </nav>
 
-
-    </header>
     
     
-    
-    <form class="form" action="" method="post">{% csrf_token %}
+    <div class="box">
+        <form class="form" action="" method="post">{% csrf_token %}
 
-        <div class="container">
-            
-            <label for="username"><b>Email : </b></label><br>
-            <input class="form-row" id="username" type="text" name="username" placeholder="Enter Email"><br>
-            
-            <label for="fname"><b>First name :</b></label><br>
-            <input class="form-row" id="fname" type="text" name="fname" placeholder="Enter first name"><br>
-            
-            <label for="sname"><b>Last name :</b></label><br>
-            <input class="form-row" id="sname" type="text" name="sname" placeholder="Enter last name"><br>
-            
-            <label for="mdp"><b>MDP :</b></label><br>
-            <input class="form-row" id="mdp" type="text" name="mdp" placeholder="Enter mdp">
-            
-            <a href=""><button class="button-34" type="submit">Sign Up</button></a>
-        </div>
-    </form>
+            <div class="container">
+
+                <label class="u" for="username"><b>Email</b></label><br>
+                <input class="form-row" id="username" type="text" name="username" placeholder="Email"><br>
+
+                <label class="u" for="fname"><b>Prénom</b></label><br>
+                <input class="form-row" id="fname" type="text" name="fname" placeholder="Prénom"><br>
+
+                <label class="u" for="sname"><b>Nom</b></label><br>
+                <input class="form-row" id="sname" type="text" name="sname" placeholder="Nom"><br>
+
+                <label class="u" for="mdp"><b>Mot de passe</b></label><br>
+                <input class="form-row" id="mdp" type="text" name="mdp" placeholder="Mot de passse">
+
+                <a href=""><button class="button-log" type="submit">Login</button></a>
+            </div>
+        </form>
+    </div>
     
 </body>
 </html>
+{% endblock %}

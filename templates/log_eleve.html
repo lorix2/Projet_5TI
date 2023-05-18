@@ -1,4 +1,4 @@
-{% extends "log.html" %}
+{% extends "index_log.html" %}
 
 {% block title %}Eleve{% endblock %}
 
@@ -9,7 +9,7 @@
 
     <p>Tu es en {% for c in clas %}
                 {{ c }}
-
+<!--
         <p>
         {% for e in exe %}
             {% if e.last_name == classs %}
@@ -21,6 +21,6 @@
         </p>
     {% endfor %}
     </p>
-
-    <a href="{% url 'tp' %}"><ul class="button-28">tp</ul></a>
+ -->
+    <p>Essayes le tableau periodique :</p><a class="tp" href="{% url 'tp' %}"><ul class="button-28">tp</ul></a>
 {% endblock %}

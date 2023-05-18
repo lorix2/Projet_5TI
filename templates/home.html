@@ -1,0 +1,56 @@
+
+{% extends "index.html" %}
+{% block title %}home{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    body{
+        overflow: hidden;
+    }
+    .centered-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+    }
+
+    h1 {
+        font-size: 4rem;
+        text-align: left;
+
+        border-bottom: 1px black solid;
+        padding-bottom: 10px;
+
+
+
+    }
+    @media only screen and (min-height: 700px) {
+        h1{
+            font-size: 6rem;
+        }
+        body{
+            overflow: visible;
+            height: 35cm;
+        }
+    }
+
+
+
+</style>
+<body>
+    <div class="centered-text">
+        <h1>Hey !<br>Ceci est une page en développement</h1>
+
+    </div>
+</body>
+</html>
+{% endblock %}

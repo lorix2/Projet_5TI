@@ -15,7 +15,7 @@
 
          font-family: 'PT Sans', sans-serif;
 
-        height: 1024px;
+
         background-image: linear-gradient(to right, #434343 0%, black 100%);
         /*background: linear-gradient(180.97deg, #000000 30%, #ffffff 99.95%);*/
 
@@ -60,7 +60,7 @@
 
     }
     img{
-    margin-left: 20px;
+        margin-left: 20px;
 
 
     }
@@ -76,11 +76,11 @@
     .button-28 {
         height: 45px;
         appearance: none;
-        background-color: transparent;
+        background-color: white;
         border: 2px solid #1A1A1A;
         border-radius: 15px;
 
-        box-shadow: 1px 2px 4px rgb(219, 219, 219);
+
         box-sizing: border-box;
         color: #3B3B3B;
         cursor: pointer;
@@ -119,9 +119,12 @@
           box-shadow: none;
           transform: translateY(0);
     }
-    a{
+    .aa{
         text-decoration: none;
         color: black;
+    }
+    .tp{
+
     }
 
 
@@ -140,9 +143,8 @@
 
             <li class="button">
                 <img src="{% static 'WebAtom crop.png' %}" alt="">
-                <a class="aa" href="{% url 'home' %}"><ul class="button-28">Home</ul></a>
-                <a class="aa" href="{% url 'login' %}"><ul class="button-28">Login</ul></a>
-                <a class="aa" href="{% url 'sp' %}"><ul class="button-28">Sign up</ul></a>
+
+                <a class="aa" href="{% url 'logout' %}"><ul class="button-28">logout</ul></a>
 
 
             </li>

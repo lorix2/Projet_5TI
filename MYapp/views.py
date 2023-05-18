@@ -12,7 +12,7 @@ from log.models import Person
 from .forms import NameForm, class_form, add_classe_to_user, sub, add_exe
 
 
-#view home avec tp
+
 def home(request):
 
     return render(request,'home.html')
