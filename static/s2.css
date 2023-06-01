@@ -3,12 +3,11 @@ body{
 
 
 
-
 }
 
 .container{
 
-
+    display: flex;
 
 
 }
@@ -745,5 +744,6 @@ body{
 @media only screen and (min-height: 700px){
     .container{
         scale: 75%;
+        display: flex;
     }
 }

@@ -179,10 +179,3 @@ def t(request):
 
     return render(request,'tp2.html')
 
-def Unread(request):
-
-  count=request.body['count']
-
-  print("hello")
-
-  print("count status ",count)
