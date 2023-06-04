@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     {% load static %}
-    <link href="{% static 's2.css' %}" rel="stylesheet">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+    <script src="{% static 'vue.js' %}"></script>
+    <script src="{% static 'data.js' %}"></script>
 </head>
 
 <body onload="load()">
@@ -283,6 +285,7 @@
                 </div>
 
             </div>
+
             <button id="del_item" class="del_item" v-on:click="select_e.pop()">delete</button>
             <button id="plus" class="plus" v-on:click="this.select_e.push(' + ')">+</button>
             <button id="fleche" class="fleche" v-on:click="this.select_e.push(' -> ')">-></button>
@@ -294,15 +297,16 @@
             </div>
 
 
-            <div class="sheet" onmouseover="load()">
+            <div class="sheet">
                 <div class="box_select" v-bind:class="`${[element.atomicnumber]}`" v-bind:id="`${[element.atomicnumber]}`" v-for="element in select_e">[[element]]</div>
             </div>
+
 
         </div>
 
 
 
-    </div>
+
 
 
 
@@ -311,8 +315,7 @@
 
 </body>
 {% load static %}
-<script src="{% static 'vue.js' %}"></script>
-<script src="{% static 'data.js' %}"></script>
+
 
 <script>
 
@@ -484,12 +487,7 @@
         
         console.log("load")
         
-        color([
-            90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,57,89
-        
-        ], 'y') 
-        
-        
+        color([90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,57,89], 'y')
         color([10, 18, 36, 54, 86, 118, 2], "orange")
         color([5,6,7,8,9,14,15,16,17,33,34,35,52,53,71], "blue")
         

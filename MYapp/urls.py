@@ -32,7 +32,6 @@ urlpatterns = [
     path('home', views.home, name='home'), #url home
     path('', views.redirect_home, name='redirect_home'), #url redirect vers home
     path('tp', views.t, name='tp'), #url home
-    path('notification',views.Unread,name='Unread'),
     path('signup', views.sign_page, name='sp'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)# ajout des fichier static pour les templates

@@ -177,5 +177,5 @@ def redirect_home(request):
 def t(request):
 
 
-    return render(request,'tp2.html')
+    return render(request, 'tpv2.html')
 

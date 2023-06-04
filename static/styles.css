@@ -1,27 +1,62 @@
 body{
 
-    background-repeat: no-repeat;
-    background-color: rgb(219, 219, 219);
-
-
-
-
-    scale: 100%;
-
-
-
-
-}
-.all_tp{
-    scale: 80%;
-}
-
-.container{
     display: flex;
 
 
+}
+
+.container{
+
+    display: flex;
+
 
 }
+.button-28 {
+        height: 45px;
+        appearance: none;
+        background-color: white;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+
+
+        box-sizing: border-box;
+        color: #3B3B3B;
+        cursor: pointer;
+        margin-left: 10px;
+        padding: 12px 24px;
+
+        line-height: normal;
+        margin-top: 10px;
+        text-decoration: none;
+        color: black;
+
+        outline: none;
+
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 150px;
+        will-change: transform;
+    }
+
+    .button-28:disabled {
+        pointer-events: none;
+    }
+
+    .button-28:hover {
+          color: #fff;
+          background-color: #1A1A1A;
+          box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+          transform: translateY(-2px);
+    }
+
+    .button-28:active {
+          box-shadow: none;
+          transform: translateY(0);
+    }
 .tp{
     display: flex;
     flex-direction: row;
@@ -36,7 +71,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    width: auto;
+    height: auto;
     display: flex;
     margin-top: 300px;
     justify-content: center;
@@ -83,7 +119,7 @@ body{
     transform: scale(180%);
     box-shadow: 0px 0px 0px #555;
     font-size: 2rem;
-    height: auto;
+
     border-radius: 3px;
     margin-bottom: 15px;
 
@@ -297,7 +333,7 @@ body{
     border-radius: 2px;
     width: 80px;
     height: 40px;
-    color:rgb(0, 0, 0);
+
     font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
     text-align: center;
@@ -509,7 +545,7 @@ body{
 
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+
 @media only screen and (min-width: 100px) {
     .container{
 
@@ -526,7 +562,7 @@ body{
         transform: scale(180%);
         box-shadow: 0px 0px 0px #555;
         font-size: 2rem;
-        height: auto;
+
         border-radius: 3px;
         margin-bottom: 14px;
 
@@ -546,7 +582,7 @@ body{
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+
  @media only screen and (min-width: 1300px) {
     .container{
 
@@ -585,7 +621,7 @@ body{
         transform: scale(180%);
         box-shadow: 0px 0px 0px #555;
         font-size: 2rem;
-        height: auto;
+
         border-radius: 3px;
         margin-bottom: 15px;
 
@@ -594,16 +630,34 @@ body{
     }
 }
 
-
-@media only screen and (min-width: 1700px) {
-    .container{
-
-    margin-top: 30px;
-    margin-left: 100px;
-    scale: 100%;
+.sheet{
+    margin-top: 1000px;
 
 
+}
+.box_select{
+    color: #3FA204;
+}
+.box_select .colo{
 
-    }
+}
+.del_item{
+
+}
+.plus{
+
+}
+.fleche{
+
+}
+.send{
+
+}
+.n{
+
+
+
+}
+.ne{
 
 }
